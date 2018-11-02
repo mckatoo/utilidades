@@ -1,0 +1,9 @@
+/home/mckatoo/Projetos/Utilidades/Utilidades.Service/bin/Debug/netcoreapp2.1/Utilidades.Service.deps.json
+/home/mckatoo/Projetos/Utilidades/Utilidades.Service/bin/Debug/netcoreapp2.1/Utilidades.Service.dll
+/home/mckatoo/Projetos/Utilidades/Utilidades.Service/bin/Debug/netcoreapp2.1/Utilidades.Service.pdb
+/home/mckatoo/Projetos/Utilidades/Utilidades.Service/obj/Debug/netcoreapp2.1/Utilidades.Service.csprojAssemblyReference.cache
+/home/mckatoo/Projetos/Utilidades/Utilidades.Service/obj/Debug/netcoreapp2.1/Utilidades.Service.csproj.CoreCompileInputs.cache
+/home/mckatoo/Projetos/Utilidades/Utilidades.Service/obj/Debug/netcoreapp2.1/Utilidades.Service.AssemblyInfoInputs.cache
+/home/mckatoo/Projetos/Utilidades/Utilidades.Service/obj/Debug/netcoreapp2.1/Utilidades.Service.AssemblyInfo.cs
+/home/mckatoo/Projetos/Utilidades/Utilidades.Service/obj/Debug/netcoreapp2.1/Utilidades.Service.dll
+/home/mckatoo/Projetos/Utilidades/Utilidades.Service/obj/Debug/netcoreapp2.1/Utilidades.Service.pdb
