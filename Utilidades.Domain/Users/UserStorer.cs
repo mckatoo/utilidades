@@ -2,11 +2,11 @@ using System.ComponentModel.DataAnnotations;
 using Utilidades.Domain.Dtos;
 
 namespace Utilidades.Domain.Users {
-    public class TypeStorer {
+    public class UserStorer {
         private readonly IRepository<Users> _userRepository;
         private readonly IRepository<UsersType> _typeRepository;
 
-        public TypeStorer (IRepository<Users> userRepository, IRepository<UsersType> typeRepository) {
+        public UserStorer (IRepository<Users> userRepository, IRepository<UsersType> typeRepository) {
             _userRepository = userRepository;
             _typeRepository = typeRepository;
         }

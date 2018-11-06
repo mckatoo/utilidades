@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/mckatoo/Projetos/Utilidades/Utilidades.Infra/Utilidades.Infra.csproj",
+      "projectUniqueName": "/home/mckatoo/projetos/utilidades/Utilidades.Infra/Utilidades.Infra.csproj",
       "projectName": "Utilidades.Infra",
-      "projectPath": "/home/mckatoo/Projetos/Utilidades/Utilidades.Infra/Utilidades.Infra.csproj",
+      "projectPath": "/home/mckatoo/projetos/utilidades/Utilidades.Infra/Utilidades.Infra.csproj",
       "packagesPath": "/home/mckatoo/.nuget/packages/",
-      "outputPath": "/home/mckatoo/Projetos/Utilidades/Utilidades.Infra/obj/",
+      "outputPath": "/home/mckatoo/projetos/utilidades/Utilidades.Infra/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"

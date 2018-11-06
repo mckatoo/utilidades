@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/mckatoo/Projetos/Utilidades/Utilidades.Domain/Utilidades.Domain.csproj",
+      "projectUniqueName": "/home/mckatoo/projetos/utilidades/Utilidades.Domain/Utilidades.Domain.csproj",
       "projectName": "Utilidades.Domain",
-      "projectPath": "/home/mckatoo/Projetos/Utilidades/Utilidades.Domain/Utilidades.Domain.csproj",
+      "projectPath": "/home/mckatoo/projetos/utilidades/Utilidades.Domain/Utilidades.Domain.csproj",
       "packagesPath": "/home/mckatoo/.nuget/packages/",
-      "outputPath": "/home/mckatoo/Projetos/Utilidades/Utilidades.Domain/obj/",
+      "outputPath": "/home/mckatoo/projetos/utilidades/Utilidades.Domain/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"

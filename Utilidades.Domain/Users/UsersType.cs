@@ -3,20 +3,20 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Utilidades.Domain.Users {
     public class UsersType {
-        public UsersType (string type, int level, string description, DateTimeOffset created_at, DateTimeOffset updated_at) {
+        public UsersType (string type, int level, string description) {
             this.Type = type;
-            setProperties (level, description, created_at, updated_at);
+            setProperties (level, description);
+            this.Created_at = DateTimeOffset.UtcNow;
         }
-        public void Update (string type, int level, string description, DateTimeOffset created_at, DateTimeOffset updated_at) {
+        public void Update (string type, int level, string description) {
             this.Type = type;
-            setProperties (level, description, created_at, updated_at);
+            setProperties (level, description);
+            this.Updated_at = DateTimeOffset.UtcNow;
         }
 
-        private void setProperties (int level, string description, DateTimeOffset created_at, DateTimeOffset updated_at) {
+        private void setProperties (int level, string description) {
             this.Level = level;
             this.Description = description;
-            this.Created_at = created_at;
-            this.Updated_at = updated_at;
         }
 
         [Key]

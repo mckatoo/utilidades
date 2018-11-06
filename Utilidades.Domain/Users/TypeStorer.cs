@@ -9,13 +9,13 @@ namespace Utilidades.Domain.Users {
             _typeRepository = typeRepository;
         }
 
-        public void Store (UserDto dto) {
-            var type = _typeRepository.GetById (dto.UsersTypeId);
+        public void Store (TypeDto dto) {
+            var type = _typeRepository.GetById (dto.Id);
             if (type == null) {
-                type = new Users (dto.Name, dto.Email, dto.Password, dto.RememberToken, type);
-                _userRepository.Save (type);
+                type = new UsersType(dto.Type, dto.Level, dto.Description);
+                _typeRepository.Save (type);
             } else {
-                type.Update (dto.Name, dto.Email, dto.Password, dto.RememberToken, type);
+                type.Update (dto.Type, dto.Level, dto.Description);
             }
         }
 
