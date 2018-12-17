@@ -1,9 +1,0 @@
-/home/mckatoo/Projetos/Utilidades/Utilidades.Infra/bin/Debug/netcoreapp2.1/Utilidades.Infra.deps.json
-/home/mckatoo/Projetos/Utilidades/Utilidades.Infra/bin/Debug/netcoreapp2.1/Utilidades.Infra.dll
-/home/mckatoo/Projetos/Utilidades/Utilidades.Infra/bin/Debug/netcoreapp2.1/Utilidades.Infra.pdb
-/home/mckatoo/Projetos/Utilidades/Utilidades.Infra/obj/Debug/netcoreapp2.1/Utilidades.Infra.csprojAssemblyReference.cache
-/home/mckatoo/Projetos/Utilidades/Utilidades.Infra/obj/Debug/netcoreapp2.1/Utilidades.Infra.csproj.CoreCompileInputs.cache
-/home/mckatoo/Projetos/Utilidades/Utilidades.Infra/obj/Debug/netcoreapp2.1/Utilidades.Infra.AssemblyInfoInputs.cache
-/home/mckatoo/Projetos/Utilidades/Utilidades.Infra/obj/Debug/netcoreapp2.1/Utilidades.Infra.AssemblyInfo.cs
-/home/mckatoo/Projetos/Utilidades/Utilidades.Infra/obj/Debug/netcoreapp2.1/Utilidades.Infra.dll
-/home/mckatoo/Projetos/Utilidades/Utilidades.Infra/obj/Debug/netcoreapp2.1/Utilidades.Infra.pdb
