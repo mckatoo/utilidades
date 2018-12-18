@@ -1,60 +1,67 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using Utilidades.API.Model;
+using Utilidades.API.Model.Context;
 
 namespace Utilidades.API.Services.Implementations {
     public class UserServiceImplementation : IUserService {
-        private volatile int count;
-
-        List<User> IUserService.FindAll () {
-            List<User> users = new List<User> ();
-            for (int i = 0; i < 8; i++) {
-                User user = MockUser (i);
-                users.Add (user);
-            }
-            return users;
+        private MySQLContext _context;
+        public UserServiceImplementation (MySQLContext context) {
+            _context = context;
         }
 
-        private User MockUser (int i) {
-            return new User {
-                Id = IncrementAndGet (),
-                    Name = "User Name " + i,
-                    Email = $"email{i}@email.com",
-                    Password = $"{i}_pass_{i}_pass_{i}",
-                    RememberToken = $"{i}_token_{i}",
-                    CreatedAt = new DateTimeOffset (),
-                    UpdatedAt = new DateTimeOffset ().AddDays (1)
-            };
+        public List<User> FindAll () {
+            return _context.Users.ToList ();
         }
-
-        private long IncrementAndGet () {
-            return Interlocked.Increment (ref count);
-        }
-
         public User FindById (long id) {
-            return new User {
-                Id = IncrementAndGet (),
-                    Name = "Milton",
-                    Email = "mckatoo@gmail.com",
-                    Password = "*******",
-                    RememberToken = "alsfjlasfjdsjf",
-                    CreatedAt = new DateTimeOffset (),
-                    UpdatedAt = new DateTimeOffset ().AddDays (1)
-            };
+            if (!Exist (id))
+                return new User ();
+
+            var result = _context.Users.SingleOrDefault (u => u.Id.Equals (id));
+
+            return result;
         }
         public User Create (User user) {
+            try {
+                _context.Add (user);
+                _context.SaveChanges ();
+            } catch (Exception ex) {
+                throw ex;
+            }
             return user;
         }
 
-        public void Delete (User user) { }
+        public void Delete (User user) {
+            var result = _context.Users.SingleOrDefault (u => u.Equals (user));
 
-        public User FindAll () {
-            throw new System.NotImplementedException ();
+            try {
+                if (result != null)
+                    _context.Users.Remove (result);
+                _context.SaveChanges ();
+            } catch (Exception ex) {
+                throw ex;
+            }
         }
 
         public User Update (User user) {
+            if (!Exist (user.Id))
+                return new User ();
+
+            var result = _context.Users.SingleOrDefault (u => u.Id.Equals (user.Id));
+
+            try {
+                _context.Entry (result).CurrentValues.SetValues (user);
+                _context.SaveChanges ();
+            } catch (Exception ex) {
+                throw ex;
+            }
             return user;
+        }
+
+        private bool Exist (long? id) {
+            return _context.Users.Any (u => u.Id.Equals (id));
         }
     }
 }
