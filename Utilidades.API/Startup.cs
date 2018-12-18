@@ -6,10 +6,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using Utilidades.API.Model.Context;
 using Utilidades.API.Services;
 using Utilidades.API.Services.Implementations;
 
@@ -23,6 +26,13 @@ namespace Utilidades.API {
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices (IServiceCollection services) {
+            services.AddDbContextPool<MySQLContext> (
+                options => options.UseMySql (
+                    Configuration["MySqlConnection:MySqlConnectionString"],
+                    mySqlOptions => {
+                        mySqlOptions.ServerVersion (new Version (5, 7, 17), ServerType.MySql);
+                    }
+                ));
             services.AddMvc ().SetCompatibilityVersion (CompatibilityVersion.Version_2_1);
             //Dependency Injection
             services.AddScoped<IUserService, UserServiceImplementation> ();
