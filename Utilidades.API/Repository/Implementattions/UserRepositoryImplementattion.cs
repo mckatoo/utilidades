@@ -4,19 +4,20 @@ using System.Linq;
 using System.Threading;
 using Utilidades.API.Model;
 using Utilidades.API.Model.Context;
+using Utilidades.API.Repository;
 
-namespace Utilidades.API.Business.Implementations {
-    public class UserBusinessImplementation : IUserBusiness {
-        private IUserRepository _repository;
-        public UserBusinessImplementation (IUserRepository repository) {
-            _repository = repository;
+namespace Utilidades.API.Business.Implementattions {
+    public class UserRepositoryImplementattion : IUserRepository {
+        private MySQLContext _context;
+        public UserRepositoryImplementattion (MySQLContext context) {
+            _context = context;
         }
 
         public List<User> FindAll () {
             return _context.Users.ToList ();
         }
         public User FindById (long id) {
-            if (!Exist (id))
+            if (!Exists (id))
                 return new User ();
 
             var result = _context.Users.SingleOrDefault (u => u.Id.Equals (id));
@@ -46,7 +47,7 @@ namespace Utilidades.API.Business.Implementations {
         }
 
         public User Update (User user) {
-            if (!Exist (user.Id))
+            if (!Exists (user.Id))
                 return new User ();
 
             var result = _context.Users.SingleOrDefault (u => u.Id.Equals (user.Id));
@@ -60,7 +61,7 @@ namespace Utilidades.API.Business.Implementations {
             return user;
         }
 
-        private bool Exist (long? id) {
+        public bool Exists (long? id) {
             return _context.Users.Any (u => u.Id.Equals (id));
         }
     }

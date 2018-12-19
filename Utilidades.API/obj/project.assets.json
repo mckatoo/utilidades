@@ -7207,11 +7207,12 @@
       ]
     },
     "Pomelo.JsonObject/2.0.0": {
-      "sha512": "5udTrGULDbHLx3Xb2DAqeeMTPxPu9TmeS6RAanMeRXOKZn3FRrBVd+Vg8TeTB0QIk1Q0su8mgsmN39O4iYca1Q==",
+      "sha512": "sMN9ETMoYfqCegOCVkOkOkfXK3ceH8nWkSeZPgLwfnx6UnqVXTl/ScIZs+x5Q8qgiPmYYCPmtolxNQ0QrcU97g==",
       "type": "package",
       "path": "pomelo.jsonobject/2.0.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "lib/netstandard2.0/Pomelo.JsonObject.dll",
         "pomelo.jsonobject.2.0.0.nupkg.sha512",
         "pomelo.jsonobject.nuspec"
@@ -11904,11 +11905,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/media/mckatoo/ARQUIVOS/PROJETOS/Utilidades/Utilidades.API/Utilidades.API.csproj",
+      "projectUniqueName": "/home/mckatoo/projetos/Utilidades/Utilidades.API/Utilidades.API.csproj",
       "projectName": "Utilidades.API",
-      "projectPath": "/media/mckatoo/ARQUIVOS/PROJETOS/Utilidades/Utilidades.API/Utilidades.API.csproj",
+      "projectPath": "/home/mckatoo/projetos/Utilidades/Utilidades.API/Utilidades.API.csproj",
       "packagesPath": "/home/mckatoo/.nuget/packages/",
-      "outputPath": "/media/mckatoo/ARQUIVOS/PROJETOS/Utilidades/Utilidades.API/obj/",
+      "outputPath": "/home/mckatoo/projetos/Utilidades/Utilidades.API/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
