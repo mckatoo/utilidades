@@ -4,29 +4,29 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Utilidades.API.Model;
-using Utilidades.API.Services;
+using Utilidades.API.Business;
 
 namespace Utilidades.API.Controllers {
     [ApiVersion("1")]
     [Route ("api/[controller]/v{version:apiVersion}")]
     [ApiController]
     public class UsersController : ControllerBase {
-        private IUserService _userService;
+        private IUserBusiness _userBusiness;
 
-        public UsersController (IUserService userService) {
-            _userService = userService;
+        public UsersController (IUserBusiness userBusiness) {
+            _userBusiness = userBusiness;
         }
 
         // GET api/values
         [HttpGet]
         public IActionResult Get () {
-            return Ok (_userService.FindAll ());
+            return Ok (_userBusiness.FindAll ());
         }
 
         // GET api/values/5
         [HttpGet ("{id}")]
         public IActionResult Get (int id) {
-            var user = _userService.FindById (id);
+            var user = _userBusiness.FindById (id);
             if (user == null)
                 return NotFound ();
             return Ok (user);
@@ -37,7 +37,7 @@ namespace Utilidades.API.Controllers {
         public IActionResult Post ([FromBody] User user) {
             if (user == null)
                 return BadRequest ();
-            return new ObjectResult (_userService.Create (user));
+            return new ObjectResult (_userBusiness.Create (user));
         }
 
         // PUT api/values/5
@@ -45,13 +45,13 @@ namespace Utilidades.API.Controllers {
         public IActionResult Put ([FromBody] User user) {
             if (user == null)
                 return BadRequest ();
-            return new ObjectResult (_userService.Update (user));
+            return new ObjectResult (_userBusiness.Update (user));
         }
 
         // DELETE api/values/5
         [HttpDelete]
         public IActionResult Delete ([FromBody] User user) {
-            _userService.Delete (user);
+            _userBusiness.Delete (user);
             return NoContent ();
         }
     }

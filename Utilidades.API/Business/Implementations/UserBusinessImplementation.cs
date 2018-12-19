@@ -5,11 +5,11 @@ using System.Threading;
 using Utilidades.API.Model;
 using Utilidades.API.Model.Context;
 
-namespace Utilidades.API.Services.Implementations {
-    public class UserServiceImplementation : IUserService {
-        private MySQLContext _context;
-        public UserServiceImplementation (MySQLContext context) {
-            _context = context;
+namespace Utilidades.API.Business.Implementations {
+    public class UserBusinessImplementation : IUserBusiness {
+        private IUserRepository _repository;
+        public UserBusinessImplementation (IUserRepository repository) {
+            _repository = repository;
         }
 
         public List<User> FindAll () {

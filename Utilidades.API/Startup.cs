@@ -13,8 +13,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using Utilidades.API.Model.Context;
-using Utilidades.API.Services;
-using Utilidades.API.Services.Implementations;
+using Utilidades.API.Business;
+using Utilidades.API.Business.Implementations;
 
 namespace Utilidades.API {
     public class Startup {
@@ -37,7 +37,7 @@ namespace Utilidades.API {
             services.AddMvc ().SetCompatibilityVersion (CompatibilityVersion.Version_2_1);
             services.AddApiVersioning();
             //Dependency Injection
-            services.AddScoped<IUserService, UserServiceImplementation> ();
+            services.AddScoped<IUserBusiness, UserBusinessImplementation> ();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

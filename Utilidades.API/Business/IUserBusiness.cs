@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using Utilidades.API.Model;
 
-namespace Utilidades.API.Services {
-    public interface IUserService {
+namespace Utilidades.API.Business {
+    public interface IUserBusiness {
         User FindById (long id);
         List<User> FindAll ();
         User Create (User user);
