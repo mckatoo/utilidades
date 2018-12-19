@@ -12,3 +12,17 @@
 /media/mckatoo/ARQUIVOS/PROJETOS/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.RazorTargetAssemblyInfo.cache
 /media/mckatoo/ARQUIVOS/PROJETOS/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.dll
 /media/mckatoo/ARQUIVOS/PROJETOS/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.pdb
+/home/mckatoo/projetos/Utilidades/Utilidades.API/bin/Debug/netcoreapp2.1/Utilidades.API.deps.json
+/home/mckatoo/projetos/Utilidades/Utilidades.API/bin/Debug/netcoreapp2.1/Utilidades.API.runtimeconfig.json
+/home/mckatoo/projetos/Utilidades/Utilidades.API/bin/Debug/netcoreapp2.1/Utilidades.API.runtimeconfig.dev.json
+/home/mckatoo/projetos/Utilidades/Utilidades.API/bin/Debug/netcoreapp2.1/Utilidades.API.dll
+/home/mckatoo/projetos/Utilidades/Utilidades.API/bin/Debug/netcoreapp2.1/Utilidades.API.pdb
+/home/mckatoo/projetos/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.csprojAssemblyReference.cache
+/home/mckatoo/projetos/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.csproj.CoreCompileInputs.cache
+/home/mckatoo/projetos/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.RazorAssemblyInfo.cache
+/home/mckatoo/projetos/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.RazorAssemblyInfo.cs
+/home/mckatoo/projetos/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.AssemblyInfoInputs.cache
+/home/mckatoo/projetos/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.AssemblyInfo.cs
+/home/mckatoo/projetos/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.RazorTargetAssemblyInfo.cache
+/home/mckatoo/projetos/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.dll
+/home/mckatoo/projetos/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.pdb

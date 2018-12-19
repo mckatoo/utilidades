@@ -7,7 +7,8 @@ using Utilidades.API.Model;
 using Utilidades.API.Services;
 
 namespace Utilidades.API.Controllers {
-    [Route ("api/[controller]")]
+    [ApiVersion("1")]
+    [Route ("api/[controller]/v{version:apiVersion}")]
     [ApiController]
     public class UsersController : ControllerBase {
         private IUserService _userService;

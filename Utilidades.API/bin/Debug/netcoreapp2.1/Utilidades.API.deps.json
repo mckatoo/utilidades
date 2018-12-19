@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "79ca5e03f6396a7673efcf50e462b973c0027619"
+    "signature": "6a76b4ab635d8cc7d0d2b0106188c2e639ea3897"
   },
   "compilationOptions": {
     "defines": [
@@ -27,13 +27,28 @@
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.NETCore.App": "2.1.0",
-          "Pomelo.EntityFrameworkCore.MySql": "2.1.4"
+          "Pomelo.EntityFrameworkCore.MySql": "2.1.4",
+          "Microsoft.AspNetCore.Mvc.Versioning": "3.0.0"
         },
         "runtime": {
           "Utilidades.API.dll": {}
         },
         "compile": {
           "Utilidades.API.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Versioning/3.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "2.1.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Versioning.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.6925.33178"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Versioning.dll": {}
         }
       },
       "Microsoft.AspNetCore.Razor.Design/2.1.2": {},
@@ -3225,6 +3240,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Microsoft.AspNetCore.Mvc.Versioning/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-A3SvIu53iLZgcgbZC9fmj3MvnKuKIwUEfge+qEzEO8Z2hytSGhbAK7pTgwSXW6+SNHtXgoQSw8YF9+vJFfet9g==",
+      "path": "microsoft.aspnetcore.mvc.versioning/3.0.0",
+      "hashPath": "microsoft.aspnetcore.mvc.versioning.3.0.0.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Razor.Design/2.1.2": {
       "type": "package",
       "serviceable": true,
@@ -3326,7 +3348,7 @@
     "Pomelo.JsonObject/2.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-5udTrGULDbHLx3Xb2DAqeeMTPxPu9TmeS6RAanMeRXOKZn3FRrBVd+Vg8TeTB0QIk1Q0su8mgsmN39O4iYca1Q==",
+      "sha512": "sha512-sMN9ETMoYfqCegOCVkOkOkfXK3ceH8nWkSeZPgLwfnx6UnqVXTl/ScIZs+x5Q8qgiPmYYCPmtolxNQ0QrcU97g==",
       "path": "pomelo.jsonobject/2.0.0",
       "hashPath": "pomelo.jsonobject.2.0.0.nupkg.sha512"
     },
