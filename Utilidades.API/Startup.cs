@@ -19,22 +19,43 @@ using Utilidades.API.Repository;
 
 namespace Utilidades.API {
     public class Startup {
-        public Startup (IConfiguration configuration) {
-            Configuration = configuration;
+        private readonly ILogger _logger;
+        public IHostingEnvironment _environment{get;}
+        public IConfiguration _configuration { get; }
+        public Startup (IConfiguration configuration, IHostingEnvironment env, ILogger<Startup> logger) {
+            _configuration = configuration;
+            _environment = env;
+            _logger = logger;
         }
 
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices (IServiceCollection services) {
-            var connection = Configuration["MySqlConnection:MySqlConnectionString"];
+            var connectionString = _configuration["MySqlConnection:MySqlConnectionString"];
+            // services.AddDbContext<MySQLContext> (
+            //     options => options.UseMySql (connectionString, mySqlOptions => {
+            //             mySqlOptions.ServerVersion (new Version (5, 7, 17), ServerType.MySql);
+            //         }
+            //     ));
             services.AddDbContext<MySQLContext> (
-                options => options.UseMySql (
-                    Configuration["MySqlConnection:MySqlConnectionString"],
-                    mySqlOptions => {
+                options => options.UseMySql (connectionString, mySqlOptions => {
                         mySqlOptions.ServerVersion (new Version (5, 7, 17), ServerType.MySql);
                     }
                 ));
+
+            if (_environment.IsDevelopment())
+            {
+                try
+                {
+                    var evolveConnection = new MySql.Data.MySqlClient.MySqlConnection(connectionString);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogCritical("Database migation failed.", ex);
+                    throw;
+                }
+            }
+                
             services.AddMvc ().SetCompatibilityVersion (CompatibilityVersion.Version_2_1);
             services.AddApiVersioning();
             //Dependency Injection
