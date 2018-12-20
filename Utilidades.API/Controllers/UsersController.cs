@@ -45,7 +45,10 @@ namespace Utilidades.API.Controllers {
         public IActionResult Put ([FromBody] User user) {
             if (user == null)
                 return BadRequest ();
-            return new ObjectResult (_userBusiness.Update (user));
+            var updatedUser = _userBusiness.Update(user);
+            if (updatedUser == null)
+                return NoContent();
+            return new ObjectResult (updatedUser);
         }
 
         // DELETE api/values/5

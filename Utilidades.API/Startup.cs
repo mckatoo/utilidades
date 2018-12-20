@@ -11,7 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+// using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using Utilidades.API.Business;
 using Utilidades.API.Business.Implementattions;
 using Utilidades.API.Model.Context;
@@ -38,7 +38,7 @@ namespace Utilidades.API {
             //         }
             //     ));
             services.AddDbContext<MySQLContext> (
-                options => options.UseMySql (connectionString, mySqlOptions => {
+                options => options.MySql.Data.mySqlOptions (connectionString, mySqlOptions => {
                         mySqlOptions.ServerVersion (new Version (5, 7, 17), ServerType.MySql);
                     }
                 ));

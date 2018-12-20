@@ -48,7 +48,7 @@ namespace Utilidades.API.Business.Implementattions {
 
         public User Update (User user) {
             if (!Exists (user.Id))
-                return new User ();
+                return null;
 
             var result = _context.Users.SingleOrDefault (u => u.Id.Equals (user.Id));
 
