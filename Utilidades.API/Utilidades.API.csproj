@@ -13,9 +13,7 @@
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.1" />
     <PackageReference Include="microsoft.aspnetcore.mvc.versioning" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
-    <PackageReference Include="mysql.data" Version="8.0.13" />
-    <!-- POMELO ENTITY FRAMEWORK CORE MYSQL -->
-    <!-- <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.1.4" /> -->
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.13" />
   </ItemGroup>
 
 </Project>

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading;
 using Utilidades.API.Model;
 using Utilidades.API.Model.Context;
-using Utilidades.API.Repository;
 
 namespace Utilidades.API.Business.Implementattions {
     public class UserRepositoryImplementattion : IUserRepository {
@@ -18,7 +17,7 @@ namespace Utilidades.API.Business.Implementattions {
         }
         public User FindById (long id) {
             if (!Exists (id))
-                return new User ();
+                return null;
 
             var result = _context.Users.SingleOrDefault (u => u.Id.Equals (id));
 
@@ -62,7 +61,10 @@ namespace Utilidades.API.Business.Implementattions {
         }
 
         public bool Exists (long? id) {
-            return _context.Users.Any (u => u.Id.Equals (id));
+            // _context.Users.Any (u => u.Id.Equals (id));
+            if (_context.Users.Where (u => u.Id.Equals (id)).Take(1).ToList() != null)
+                return true;
+            return false;
         }
     }
 }

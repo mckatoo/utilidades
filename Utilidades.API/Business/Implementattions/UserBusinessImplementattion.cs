@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading;
 using Utilidades.API.Model;
 using Utilidades.API.Model.Context;
-using Utilidades.API.Repository;
 
 namespace Utilidades.API.Business.Implementattions {
     public class UserBusinessImplementattion : IUserBusiness {

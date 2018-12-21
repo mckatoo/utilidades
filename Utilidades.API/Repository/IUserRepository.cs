@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Utilidades.API.Model;
 
-namespace Utilidades.API.Repository {
+namespace Utilidades.API.Business {
     public interface IUserRepository {
         User FindById (long id);
         List<User> FindAll ();
