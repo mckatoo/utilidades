@@ -33,8 +33,8 @@ namespace Utilidades.API.Business.Implementattions {
             return user;
         }
 
-        public void Delete (User user) {
-            var result = _context.Users.SingleOrDefault (u => u.Equals (user));
+        public void Delete (long id) {
+            var result = _context.Users.SingleOrDefault (u => u.Id.Equals (id));
 
             try {
                 if (result != null)

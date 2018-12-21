@@ -7,7 +7,7 @@ namespace Utilidades.API.Business {
         List<User> FindAll ();
         User Create (User user);
         User Update (User user);
-        void Delete (User user);
+        void Delete (long id);
         bool Exists(long? id);
     }
 }

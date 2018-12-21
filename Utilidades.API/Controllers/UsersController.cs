@@ -52,9 +52,9 @@ namespace Utilidades.API.Controllers {
         }
 
         // DELETE api/values/5
-        [HttpDelete]
-        public IActionResult Delete ([FromBody] User user) {
-            _userBusiness.Delete (user);
+        [HttpDelete ("{id}")]
+        public IActionResult Delete (long id) {
+            _userBusiness.Delete (id);
             return NoContent ();
         }
     }

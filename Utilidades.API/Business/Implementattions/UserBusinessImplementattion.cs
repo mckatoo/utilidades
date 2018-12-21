@@ -22,8 +22,8 @@ namespace Utilidades.API.Business.Implementattions {
             return _repository.Create(user);
         }
 
-        public void Delete (User user) {
-            _repository.Delete(user);
+        public void Delete (long id) {
+            _repository.Delete(id);
         }
 
         public User Update (User user) {
