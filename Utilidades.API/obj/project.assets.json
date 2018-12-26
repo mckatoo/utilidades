@@ -12620,11 +12620,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/media/mckatoo/ARQUIVOS/PROJETOS/Utilidades/Utilidades.API/Utilidades.API.csproj",
+      "projectUniqueName": "/media/mckatoo/ARQUIVOS/COMMON/PROJETOS/Utilidades/Utilidades.API/Utilidades.API.csproj",
       "projectName": "Utilidades.API",
-      "projectPath": "/media/mckatoo/ARQUIVOS/PROJETOS/Utilidades/Utilidades.API/Utilidades.API.csproj",
+      "projectPath": "/media/mckatoo/ARQUIVOS/COMMON/PROJETOS/Utilidades/Utilidades.API/Utilidades.API.csproj",
       "packagesPath": "/home/mckatoo/.nuget/packages/",
-      "outputPath": "/media/mckatoo/ARQUIVOS/PROJETOS/Utilidades/Utilidades.API/obj/",
+      "outputPath": "/media/mckatoo/ARQUIVOS/COMMON/PROJETOS/Utilidades/Utilidades.API/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Utilidades.API.Model;
 using Utilidades.API.Business;
+using Utilidades.API.Model;
 
 namespace Utilidades.API.Controllers {
-    [ApiVersion("1")]
+    [ApiVersion ("1")]
     [Route ("api/[controller]/v{version:apiVersion}")]
     [ApiController]
     public class UsersController : ControllerBase {
@@ -25,7 +25,7 @@ namespace Utilidades.API.Controllers {
 
         // GET api/values/5
         [HttpGet ("{id}")]
-        public IActionResult Get (int id) {
+        public IActionResult Get (long id) {
             var user = _userBusiness.FindById (id);
             if (user == null)
                 return NotFound ();
@@ -45,9 +45,9 @@ namespace Utilidades.API.Controllers {
         public IActionResult Put ([FromBody] User user) {
             if (user == null)
                 return BadRequest ();
-            var updatedUser = _userBusiness.Update(user);
+            var updatedUser = _userBusiness.Update (user);
             if (updatedUser == null)
-                return NoContent();
+                return NoContent ();
             return new ObjectResult (updatedUser);
         }
 

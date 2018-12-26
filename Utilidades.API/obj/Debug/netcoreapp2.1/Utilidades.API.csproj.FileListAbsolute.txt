@@ -26,3 +26,17 @@
 /home/mckatoo/projetos/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.RazorTargetAssemblyInfo.cache
 /home/mckatoo/projetos/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.dll
 /home/mckatoo/projetos/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.pdb
+/media/mckatoo/ARQUIVOS/COMMON/PROJETOS/Utilidades/Utilidades.API/bin/Debug/netcoreapp2.1/Utilidades.API.deps.json
+/media/mckatoo/ARQUIVOS/COMMON/PROJETOS/Utilidades/Utilidades.API/bin/Debug/netcoreapp2.1/Utilidades.API.runtimeconfig.json
+/media/mckatoo/ARQUIVOS/COMMON/PROJETOS/Utilidades/Utilidades.API/bin/Debug/netcoreapp2.1/Utilidades.API.runtimeconfig.dev.json
+/media/mckatoo/ARQUIVOS/COMMON/PROJETOS/Utilidades/Utilidades.API/bin/Debug/netcoreapp2.1/Utilidades.API.dll
+/media/mckatoo/ARQUIVOS/COMMON/PROJETOS/Utilidades/Utilidades.API/bin/Debug/netcoreapp2.1/Utilidades.API.pdb
+/media/mckatoo/ARQUIVOS/COMMON/PROJETOS/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.csprojAssemblyReference.cache
+/media/mckatoo/ARQUIVOS/COMMON/PROJETOS/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.csproj.CoreCompileInputs.cache
+/media/mckatoo/ARQUIVOS/COMMON/PROJETOS/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.RazorAssemblyInfo.cache
+/media/mckatoo/ARQUIVOS/COMMON/PROJETOS/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.RazorAssemblyInfo.cs
+/media/mckatoo/ARQUIVOS/COMMON/PROJETOS/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.AssemblyInfoInputs.cache
+/media/mckatoo/ARQUIVOS/COMMON/PROJETOS/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.AssemblyInfo.cs
+/media/mckatoo/ARQUIVOS/COMMON/PROJETOS/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.RazorTargetAssemblyInfo.cache
+/media/mckatoo/ARQUIVOS/COMMON/PROJETOS/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.dll
+/media/mckatoo/ARQUIVOS/COMMON/PROJETOS/Utilidades/Utilidades.API/obj/Debug/netcoreapp2.1/Utilidades.API.pdb

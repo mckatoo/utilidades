@@ -5,5 +5,6 @@ namespace Utilidades.API.Model.Context {
         public MySQLContext () { }
         public MySQLContext (DbContextOptions<MySQLContext> options) : base (options) { }
         public DbSet<User> Users { get; set; }
+        public DbSet<UsersType> UsersTypes { get; set; }
     }
 }
