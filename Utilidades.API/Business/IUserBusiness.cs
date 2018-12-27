@@ -1,12 +1,12 @@
 using System.Collections.Generic;
-using Utilidades.API.Model;
+using Utilidades.API.Data.VO;
 
 namespace Utilidades.API.Business {
     public interface IUserBusiness {
-        User FindById (long id);
-        List<User> FindAll ();
-        User Create (User user);
-        User Update (User user);
+        UserVO FindById (long id);
+        List<UserVO> FindAll ();
+        UserVO Create (UserVO user);
+        UserVO Update (UserVO user);
         void Delete (long id);
     }
 }

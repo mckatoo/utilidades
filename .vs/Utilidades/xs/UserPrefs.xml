@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{BB6C8E6E-C132-4852-A25A-6BAC4FBAAE15}|Default">
+  <MonoDevelop.Ide.ItemProperties.Utilidades.API PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Utilidades.API/Data/Converter/IParser.cs">
+    <Files>
+      <File FileName="Utilidades.API/Data/Converter/IParser.cs" Line="6" Column="6" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Utilidades" expanded="True">
+            <Node name="Utilidades.API" expanded="True">
+              <Node name="Data" expanded="True">
+                <Node name="Converter" expanded="True">
+                  <Node name="IParser.cs" selected="True" />
+                </Node>
+                <Node name="Converters" expanded="True" />
+                <Node name="VO" expanded="True" />
+              </Node>
+              <Node name="Model" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

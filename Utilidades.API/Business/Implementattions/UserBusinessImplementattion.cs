@@ -1,36 +1,45 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
+using Utilidades.API.Data.Converters;
+using Utilidades.API.Data.VO;
 using Utilidades.API.Model;
-using Utilidades.API.Model.Context;
 using Utilidades.API.Repository.Generic;
 
 namespace Utilidades.API.Business.Implementattions {
     public class UserBusinessImplementattion : IUserBusiness {
         private IRepository<User> _repository;
+        private readonly UserConverter _converter;
         public UserBusinessImplementattion (IRepository<User> repository) {
             _repository = repository;
+            _converter = new UserConverter ();
         }
 
-        public List<User> FindAll () {
-            return _repository.FindAll ();
+        public List<UserVO> FindAll () {
+            return _converter.ParseList (_repository.FindAll ());
         }
-        public User FindById (long id) {
-            return _repository.FindById (id);
+        public UserVO FindById (long id) {
+            return _converter.Parse (_repository.FindById (id));
         }
-        public User Create (User user) {
+        public UserVO Create (UserVO user) {
             user.CreatedAt = DateTimeOffset.UtcNow;
-            return _repository.Create (user);
+
+            var userEntity = _converter.Parse (user);
+            userEntity = _repository.Create (userEntity);
+
+            return _converter.Parse (userEntity);
         }
 
         public void Delete (long id) {
             _repository.Delete (id);
         }
 
-        public User Update (User user) {
+        public UserVO Update (UserVO user) {
             user.UpdatedAt = DateTimeOffset.UtcNow;
-            return _repository.Update (user);
+
+            var userEntity = _converter.Parse (user);
+            userEntity = _repository.Update (userEntity);
+
+            return _converter.Parse (userEntity);
         }
     }
 }

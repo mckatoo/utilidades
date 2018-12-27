@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Utilidades.API.Business;
-using Utilidades.API.Model;
+using Utilidades.API.Data.VO;
 
 namespace Utilidades.API.Controllers {
     [ApiVersion ("1")]
@@ -24,14 +24,14 @@ namespace Utilidades.API.Controllers {
         }
 
         [HttpPost]
-        public IActionResult Post ([FromBody] UsersType usersType) {
+        public IActionResult Post ([FromBody] UsersTypeVO usersType) {
             if (usersType == null)
                 return BadRequest ();
             return new ObjectResult (_usersTypeBusiness.Create (usersType));
         }
 
         [HttpPut]
-        public IActionResult Put ([FromBody] UsersType usersType) {
+        public IActionResult Put ([FromBody] UsersTypeVO usersType) {
             if (usersType == null)
                 return BadRequest ();
             var updatedUsersType = _usersTypeBusiness.Update (usersType);
@@ -40,7 +40,7 @@ namespace Utilidades.API.Controllers {
             return new ObjectResult (updatedUsersType);
         }
 
-        [HttpDelete]
+        [HttpDelete ("{id}")]
         public IActionResult Delete (long id) {
             _usersTypeBusiness.Delete (id);
             return NoContent ();
