@@ -6,13 +6,18 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.Net.Http.Headers;
+using Swashbuckle.AspNetCore.Swagger;
+using Tapioca.HATEOAS;
 using Utilidades.API.Business;
 using Utilidades.API.Business.Implementattions;
+using Utilidades.API.HyperMedia;
 using Utilidades.API.Model.Context;
 using Utilidades.API.Repository.Generic;
 
@@ -39,8 +44,27 @@ namespace Utilidades.API {
                 options.UseMySQL (_connectionString)
             );
 
-            services.AddMvc ().SetCompatibilityVersion (CompatibilityVersion.Version_2_1);
+            services.AddMvc (options => {
+                    options.RespectBrowserAcceptHeader = true;
+                    options.FormatterMappings.SetMediaTypeMappingForFormat ("xml", MediaTypeHeaderValue.Parse ("text/xml"));
+                    options.FormatterMappings.SetMediaTypeMappingForFormat ("json", MediaTypeHeaderValue.Parse ("application/json"));
+                })
+                .AddXmlSerializerFormatters ()
+                .SetCompatibilityVersion (CompatibilityVersion.Version_2_1);
+
+            var filterOptions = new HyperMediaFilterOptions ();
+            filterOptions.ObjectContentResponseEnricherList.Add (new UsersTypeEnricher ());
+            services.AddSingleton (filterOptions);
+
             services.AddApiVersioning ();
+
+            services.AddSwaggerGen (c => {
+                c.SwaggerDoc ("v1", new Info {
+                    Title = "Sistema de Utilidades",
+                        Version = "v1"
+                });
+            });
+
             //Dependency Injection
             services.AddScoped<IUserBusiness, UserBusinessImplementattion> ();
             services.AddScoped<IUserRepository, UserRepositoryImplementattion> ();
@@ -72,8 +96,23 @@ namespace Utilidades.API {
                 app.UseHsts ();
             }
 
+            app.UseSwagger ();
+            app.UseSwaggerUI (c => {
+                c.SwaggerEndpoint ("/swagger/v1/swagger.json", "Utils API v1");
+            });
+
+            var option = new RewriteOptions ();
+            option.AddRedirect ("^$", "swagger");
+            app.UseRewriter (option);
+
             app.UseHttpsRedirection ();
-            app.UseMvc ();
+
+            app.UseMvc (routes => {
+                routes.MapRoute (
+                    name: "DefaultApi",
+                    template: "{controller=Values}/{id?}"
+                );
+            });
         }
     }
 }

@@ -1,9 +1,11 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using Tapioca.HATEOAS;
 
 namespace Utilidades.API.Data.VO {
     [Table ("users")]
-    public class UserVO {
+    public class UserVO : ISupportsHyperMedia {
         public long? Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
@@ -20,5 +22,6 @@ namespace Utilidades.API.Data.VO {
 
         [Column ("users_type_id")]
         public long? UsersTypeId { get; set; }
+        public List<HyperMediaLink> Links { get; set; } = new List<HyperMediaLink> ();
     }
 }

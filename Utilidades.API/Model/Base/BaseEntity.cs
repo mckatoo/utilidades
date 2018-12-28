@@ -1,4 +1,6 @@
+using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 
 namespace Utilidades.API.Model.Base {
@@ -8,5 +10,10 @@ namespace Utilidades.API.Model.Base {
         [Key]
         public long? Id { get; set; }
 
+        [Column ("created_at")]
+        public DateTimeOffset? CreatedAt { get; set; }
+
+        [Column ("updated_at")]
+        public DateTimeOffset? UpdatedAt { get; set; }
     }
 }
