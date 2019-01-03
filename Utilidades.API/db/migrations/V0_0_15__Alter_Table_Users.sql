@@ -1,0 +1,4 @@
+ALTER TABLE `utilidades`.`users` 
+ADD COLUMN `login` VARCHAR(45) NOT NULL AFTER `email`;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;

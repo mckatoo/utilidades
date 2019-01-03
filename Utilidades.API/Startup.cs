@@ -54,6 +54,7 @@ namespace Utilidades.API {
 
             var filterOptions = new HyperMediaFilterOptions ();
             filterOptions.ObjectContentResponseEnricherList.Add (new UsersTypeEnricher ());
+            filterOptions.ObjectContentResponseEnricherList.Add (new UserEnricher ());
             services.AddSingleton (filterOptions);
 
             services.AddApiVersioning ();
@@ -66,9 +67,9 @@ namespace Utilidades.API {
             });
 
             //Dependency Injection
-            services.AddScoped<IUserBusiness, UserBusinessImplementattion> ();
-            services.AddScoped<IUserRepository, UserRepositoryImplementattion> ();
-            services.AddScoped<IUsersTypeBusiness, UsersTypeBusinessImplementattion> ();
+            services.AddScoped<IUserBusiness, UserBusinessImpl> ();
+            services.AddScoped<IUsersTypeBusiness, UsersTypeBusinessImpl> ();
+            services.AddScoped<ILoginBusiness, LoginBusinessImpl> ();
             //Dependency Injection of Generic Repository
             services.AddScoped (typeof (IRepository<>), typeof (GenericRepository<>));
         }

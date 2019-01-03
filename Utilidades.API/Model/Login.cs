@@ -1,11 +1,12 @@
 using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Tapioca.HATEOAS;
+using Utilidades.API.Model.Base;
 
-namespace Utilidades.API.Data.VO {
+namespace Utilidades.API.Model {
     [Table ("users")]
-    public class UserVO : ISupportsHyperMedia {
+    public class Login {
+        [Key]
         public long? Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
@@ -15,14 +16,12 @@ namespace Utilidades.API.Data.VO {
         [Column ("remember_token")]
         public string RememberToken { get; set; }
 
+        [Column ("users_type_id")]
+        public long? UsersTypeId { get; set; }
         [Column ("created_at")]
         public DateTimeOffset? CreatedAt { get; set; }
 
         [Column ("updated_at")]
         public DateTimeOffset? UpdatedAt { get; set; }
-
-        [Column ("users_type_id")]
-        public long? UsersTypeId { get; set; }
-        public List<HyperMediaLink> Links { get; set; } = new List<HyperMediaLink> ();
     }
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Tapioca.HATEOAS;
 
-namespace Utilidades.API.Data.VO {
+namespace Utilidades.API.Model {
     [Table ("users")]
-    public class UserVO : ISupportsHyperMedia {
+    public class LoginVO : ISupportsHyperMedia {
         public long? Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }

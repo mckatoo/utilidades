@@ -6,10 +6,10 @@ using Utilidades.API.Model;
 using Utilidades.API.Repository.Generic;
 
 namespace Utilidades.API.Business.Implementattions {
-    public class UserBusinessImplementattion : IUserBusiness {
+    public class UserBusinessImpl : IUserBusiness {
         private IRepository<User> _repository;
         private readonly UserConverter _converter;
-        public UserBusinessImplementattion (IRepository<User> repository) {
+        public UserBusinessImpl (IRepository<User> repository) {
             _repository = repository;
             _converter = new UserConverter ();
         }
