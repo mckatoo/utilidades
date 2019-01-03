@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Tapioca.HATEOAS;
 using Utilidades.API.Business;
@@ -23,6 +24,7 @@ namespace Utilidades.API.Controllers {
         [ProducesResponseType (204)]
         [ProducesResponseType (400)]
         [ProducesResponseType (401)]
+        [Authorize ("Bearer")]
         [TypeFilter (typeof (HyperMediaFilter))]
         public IActionResult Get () {
             return Ok (_userBusiness.FindAll ());
@@ -34,6 +36,7 @@ namespace Utilidades.API.Controllers {
         [ProducesResponseType (400)]
         [ProducesResponseType (401)]
         [ProducesResponseType (404)]
+        [Authorize ("Bearer")]
         [TypeFilter (typeof (HyperMediaFilter))]
         public IActionResult Get (long id) {
             var user = _userBusiness.FindById (id);
@@ -46,11 +49,12 @@ namespace Utilidades.API.Controllers {
         [ProducesResponseType (typeof (List<UserVO>), 201)]
         [ProducesResponseType (400)]
         [ProducesResponseType (401)]
+        [Authorize ("Bearer")]
         [TypeFilter (typeof (HyperMediaFilter))]
         public IActionResult Post ([FromBody] UserVO user) {
             if (user == null)
                 return BadRequest ();
-            return new ObjectResult (_userBusiness.Create (user));
+            return new OkObjectResult (_userBusiness.Create (user));
         }
 
         [HttpPut]
@@ -58,6 +62,7 @@ namespace Utilidades.API.Controllers {
         [ProducesResponseType (400)]
         [ProducesResponseType (401)]
         [ProducesResponseType (404)]
+        [Authorize ("Bearer")]
         [TypeFilter (typeof (HyperMediaFilter))]
         public IActionResult Put ([FromBody] UserVO user) {
             if (user == null)
@@ -65,7 +70,7 @@ namespace Utilidades.API.Controllers {
             var updatedUser = _userBusiness.Update (user);
             if (updatedUser == null)
                 return NoContent ();
-            return new ObjectResult (updatedUser);
+            return new OkObjectResult (updatedUser);
         }
 
         [HttpDelete ("{id}")]
@@ -74,7 +79,7 @@ namespace Utilidades.API.Controllers {
         [ProducesResponseType (400)]
         [ProducesResponseType (401)]
         [ProducesResponseType (404)]
-        [TypeFilter (typeof (HyperMediaFilter))]
+        [Authorize ("Bearer")]
         public IActionResult Delete (long id) {
             _userBusiness.Delete (id);
             return NoContent ();

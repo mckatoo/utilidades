@@ -9,9 +9,9 @@ namespace Utilidades.API.Business.Implementattions {
             _context = context;
         }
 
-        public Login FindByLogin(string login)
-        {
-            return _context.Logins.SingleOrDefault(u => u.Username.Equals(login));
+        public User FindByLogin (string login) {
+            return _context.Users.SingleOrDefault (u => u.Username.Equals (login));
         }
+
     }
 }
