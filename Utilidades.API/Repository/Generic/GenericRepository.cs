@@ -7,7 +7,7 @@ using Utilidades.API.Model.Context;
 
 namespace Utilidades.API.Repository.Generic {
     public class GenericRepository<T> : IRepository<T> where T : BaseEntity {
-        private MySQLContext _context;
+        protected MySQLContext _context;
         private DbSet<T> dataset;
         public GenericRepository (MySQLContext context) {
             _context = context;

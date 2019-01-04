@@ -25,7 +25,18 @@ namespace Utilidades.API.Controllers {
         [Authorize ("Bearer")]
         [TypeFilter (typeof (HyperMediaFilter))]
         public IActionResult Get () {
-            return Ok (_usersTypeBusiness.FindAll ());
+            return new OkObjectResult (_usersTypeBusiness.FindAll ());
+        }
+
+        [HttpGet ("find-by-type")]
+        [ProducesResponseType (typeof (List<UsersTypeVO>), 200)]
+        [ProducesResponseType (204)]
+        [ProducesResponseType (400)]
+        [ProducesResponseType (401)]
+        [Authorize ("Bearer")]
+        [TypeFilter (typeof (HyperMediaFilter))]
+        public IActionResult GetByType ([FromQuery] string type) {
+            return new OkObjectResult (_usersTypeBusiness.FindByType (type));
         }
 
         [HttpGet ("{id}")]
@@ -37,7 +48,7 @@ namespace Utilidades.API.Controllers {
         [Authorize ("Bearer")]
         [TypeFilter (typeof (HyperMediaFilter))]
         public IActionResult Get (long id) {
-            return Ok (_usersTypeBusiness.FindById (id));
+            return new OkObjectResult (_usersTypeBusiness.FindById (id));
         }
 
         [HttpPost]

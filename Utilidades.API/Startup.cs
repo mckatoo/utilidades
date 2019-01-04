@@ -75,6 +75,7 @@ namespace Utilidades.API {
             services.AddScoped<IUsersTypeBusiness, UsersTypeBusinessImpl> ();
             services.AddScoped<ILoginBusiness, LoginBusinessImpl> ();
             services.AddScoped<IUserRepository, UserRepositoryImpl> ();
+            services.AddScoped<IUsersTypeRepository, UsersTypeRepositoryImpl> ();
             //Dependency Injection of Generic Repository
             services.AddScoped (typeof (IRepository<>), typeof (GenericRepository<>));
         }

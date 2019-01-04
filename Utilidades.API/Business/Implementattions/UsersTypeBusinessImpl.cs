@@ -7,9 +7,9 @@ using Utilidades.API.Repository.Generic;
 
 namespace Utilidades.API.Business.Implementattions {
     public class UsersTypeBusinessImpl : IUsersTypeBusiness {
-        private IRepository<UsersType> _repository;
+        private IUsersTypeRepository _repository;
         private readonly UsersTypeConverter _converter;
-        public UsersTypeBusinessImpl (IRepository<UsersType> repository) {
+        public UsersTypeBusinessImpl (IUsersTypeRepository repository) {
             _repository = repository;
             _converter = new UsersTypeConverter ();
         }
@@ -19,6 +19,10 @@ namespace Utilidades.API.Business.Implementattions {
         }
         public UsersTypeVO FindById (long id) {
             return _converter.Parse (_repository.FindById (id));
+        }
+
+        public List<UsersTypeVO> FindByType (string type) {
+            return _converter.ParseList (_repository.FindByType (type));
         }
         public UsersTypeVO Create (UsersTypeVO type) {
             type.CreatedAt = DateTimeOffset.UtcNow;
