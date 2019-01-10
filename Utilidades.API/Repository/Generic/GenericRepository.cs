@@ -13,6 +13,7 @@ namespace Utilidades.API.Repository.Generic {
             _context = context;
             dataset = _context.Set<T> ();
         }
+
         public T Create (T item) {
             try {
                 dataset.Add (item);
@@ -52,6 +53,10 @@ namespace Utilidades.API.Repository.Generic {
             var result = dataset.SingleOrDefault (u => u.Id.Equals (id));
 
             return result;
+        }
+
+        public List<T> FindWithPagedSearch (string query) {
+            return dataset.FromSql<T> (query).ToList ();
         }
 
         public T Update (T item) {

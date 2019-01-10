@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Tapioca.HATEOAS.Utils;
 using Utilidades.API.Data.Converters;
 using Utilidades.API.Data.VO;
 using Utilidades.API.Model;
@@ -44,6 +46,28 @@ namespace Utilidades.API.Business.Implementattions {
             typeEntity = _repository.Update (typeEntity);
 
             return _converter.Parse (typeEntity);
+        }
+
+        public PagedSearchDTO<UsersTypeVO> FindWithPagedSearch (string type, string sortDirection, int pageSize, int activePage) {
+            string query = $"SELECT * FROM utilidades.users_type where 1 = 1 ";
+            string countQuery = "SELECT count(*) FROM utilidades.users_type where 1 = 1 ";
+
+            if (!String.IsNullOrWhiteSpace (type) || !String.IsNullOrEmpty (type)) {
+                query = query + $"and type like \"%{type}%\" ";
+                countQuery = query;
+            }
+
+            query = query + $"order by type {sortDirection} limit {pageSize} offset {activePage};";
+            var types = _converter.ParseList (_repository.FindWithPagedSearch (query));
+            int totalResults = _converter.ParseList (_repository.FindWithPagedSearch (countQuery)).Count;
+
+            return new PagedSearchDTO<UsersTypeVO> {
+                CurrentPage = activePage,
+                List = types,
+                PageSize = pageSize,
+                SortDirections = sortDirection,
+                TotalResults = totalResults
+            };
         }
     }
 }

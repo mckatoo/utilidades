@@ -28,15 +28,26 @@ namespace Utilidades.API.Controllers {
             return new OkObjectResult (_usersTypeBusiness.FindAll ());
         }
 
-        [HttpGet ("find-by-type")]
+        [HttpGet ("find")]
         [ProducesResponseType (typeof (List<UsersTypeVO>), 200)]
         [ProducesResponseType (204)]
         [ProducesResponseType (400)]
         [ProducesResponseType (401)]
         [Authorize ("Bearer")]
         [TypeFilter (typeof (HyperMediaFilter))]
-        public IActionResult GetByType ([FromQuery] string type) {
+        public IActionResult FindByType ([FromQuery] string type) {
             return new OkObjectResult (_usersTypeBusiness.FindByType (type));
+        }
+
+        [HttpGet ("find/{sortDirection}/{pageSize}/{activePage}")]
+        [ProducesResponseType (typeof (List<UsersTypeVO>), 200)]
+        [ProducesResponseType (204)]
+        [ProducesResponseType (400)]
+        [ProducesResponseType (401)]
+        [Authorize ("Bearer")]
+        [TypeFilter (typeof (HyperMediaFilter))]
+        public IActionResult FindPagedSearch ([FromQuery] string type, string sortDirection, int pageSize, int activePage) {
+            return new OkObjectResult (_usersTypeBusiness.FindWithPagedSearch (type, sortDirection, pageSize, activePage));
         }
 
         [HttpGet ("{id}")]
