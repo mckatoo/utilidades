@@ -1,5 +1,7 @@
 CREATE TABLE IF NOT EXISTS `utilidades`.`setores` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `setor` VARCHAR(60) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `setor` VARCHAR(60) NOT NULL,
+    `created_at` TIMESTAMP NULL DEFAULT NULL,
+    `updated_at` TIMESTAMP NULL DEFAULT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB DEFAULT CHARACTER SET = latin1;
