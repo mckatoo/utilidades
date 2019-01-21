@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS `utilidades`.`cursos` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `curso` VARCHAR(255) NOT NULL,
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;

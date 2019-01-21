@@ -1,0 +1,9 @@
+/media/ARQUIVOS/COMMON/PROJETOS/Utilidades/src/ApplicationCore/Utilidades.ApplicationCore/bin/Debug/netcoreapp2.2/Utilidades.ApplicationCore.deps.json
+/media/ARQUIVOS/COMMON/PROJETOS/Utilidades/src/ApplicationCore/Utilidades.ApplicationCore/bin/Debug/netcoreapp2.2/Utilidades.ApplicationCore.dll
+/media/ARQUIVOS/COMMON/PROJETOS/Utilidades/src/ApplicationCore/Utilidades.ApplicationCore/bin/Debug/netcoreapp2.2/Utilidades.ApplicationCore.pdb
+/media/ARQUIVOS/COMMON/PROJETOS/Utilidades/src/ApplicationCore/Utilidades.ApplicationCore/obj/Debug/netcoreapp2.2/Utilidades.ApplicationCore.csprojAssemblyReference.cache
+/media/ARQUIVOS/COMMON/PROJETOS/Utilidades/src/ApplicationCore/Utilidades.ApplicationCore/obj/Debug/netcoreapp2.2/Utilidades.ApplicationCore.csproj.CoreCompileInputs.cache
+/media/ARQUIVOS/COMMON/PROJETOS/Utilidades/src/ApplicationCore/Utilidades.ApplicationCore/obj/Debug/netcoreapp2.2/Utilidades.ApplicationCore.AssemblyInfoInputs.cache
+/media/ARQUIVOS/COMMON/PROJETOS/Utilidades/src/ApplicationCore/Utilidades.ApplicationCore/obj/Debug/netcoreapp2.2/Utilidades.ApplicationCore.AssemblyInfo.cs
+/media/ARQUIVOS/COMMON/PROJETOS/Utilidades/src/ApplicationCore/Utilidades.ApplicationCore/obj/Debug/netcoreapp2.2/Utilidades.ApplicationCore.dll
+/media/ARQUIVOS/COMMON/PROJETOS/Utilidades/src/ApplicationCore/Utilidades.ApplicationCore/obj/Debug/netcoreapp2.2/Utilidades.ApplicationCore.pdb
