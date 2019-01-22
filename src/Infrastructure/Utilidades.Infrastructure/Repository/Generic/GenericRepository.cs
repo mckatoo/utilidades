@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using Utilidades.ApplicationCore.Model.Base;
-using Utilidades.Infrastructure.Data;
+using Utilidades.ApplicationCore.Entity.Base;
+using Utilidades.Infrastructure.Data.Context;
 
 namespace Utilidades.Infrastructure.Repository.Generic {
     public class GenericRepository<T> : IRepository<T> where T : BaseEntity {
-        protected MySQLContext _context;
+        protected utilidadesContext _context;
         private DbSet<T> dataset;
-        public GenericRepository (MySQLContext context) {
+        public GenericRepository (utilidadesContext context) {
             _context = context;
             dataset = _context.Set<T> ();
         }

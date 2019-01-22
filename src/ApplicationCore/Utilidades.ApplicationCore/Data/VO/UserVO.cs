@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Tapioca.HATEOAS;
+using Utilidades.ApplicationCore.Entity;
 
 namespace Utilidades.ApplicationCore.Data.VO {
     [Table ("users")]
@@ -22,7 +23,7 @@ namespace Utilidades.ApplicationCore.Data.VO {
         public DateTimeOffset? UpdatedAt { get; set; }
 
         [Column ("users_type_id")]
-        public long? UsersTypeId { get; set; }
+        public UsersType UsersType { get; set; }
         public List<HyperMediaLink> Links { get; set; } = new List<HyperMediaLink> ();
     }
 }

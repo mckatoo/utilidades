@@ -2,14 +2,14 @@
 using System.Linq;
 using Utilidades.ApplicationCore.Data.Converter;
 using Utilidades.ApplicationCore.Data.VO;
-using Utilidades.ApplicationCore.Model;
+using Utilidades.ApplicationCore.Entity;
 
 namespace Utilidades.ApplicationCore.Data.Converters {
-    public class UserConverter : IParser<UserVO, User>, IParser<User, UserVO> {
-        public User Parse (UserVO origin) {
+    public class UserConverter : IParser<UserVO, Users>, IParser<Users, UserVO> {
+        public Users Parse (UserVO origin) {
             if (origin == null)
-                return new User ();
-            return new User {
+                return new Users ();
+            return new Users {
                 Id = origin.Id,
                     Name = origin.Name,
                     Email = origin.Email,
@@ -18,11 +18,11 @@ namespace Utilidades.ApplicationCore.Data.Converters {
                     RememberToken = origin.RememberToken,
                     CreatedAt = origin.CreatedAt,
                     UpdatedAt = origin.UpdatedAt,
-                    UsersTypeId = origin.UsersTypeId
+                    UsersType = origin.UsersType
             };
         }
 
-        public UserVO Parse (User origin) {
+        public UserVO Parse (Users origin) {
             if (origin == null)
                 return new UserVO ();
             return new UserVO {
@@ -34,17 +34,17 @@ namespace Utilidades.ApplicationCore.Data.Converters {
                     RememberToken = origin.RememberToken,
                     CreatedAt = origin.CreatedAt,
                     UpdatedAt = origin.UpdatedAt,
-                    UsersTypeId = origin.UsersTypeId
+                    UsersType = origin.UsersType
             };
         }
 
-        public List<User> ParseList (IList<UserVO> origin) {
+        public List<Users> ParseList (IList<UserVO> origin) {
             if (origin == null)
-                return new List<User> ();
+                return new List<Users> ();
             return origin.Select (item => Parse (item)).ToList ();
         }
 
-        public List<UserVO> ParseList (IList<User> origin) {
+        public List<UserVO> ParseList (IList<Users> origin) {
             if (origin == null)
                 return new List<UserVO> ();
             return origin.Select (item => Parse (item)).ToList ();

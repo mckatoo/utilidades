@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using Utilidades.ApplicationCore.Data.Converters;
 using Utilidades.ApplicationCore.Data.VO;
-using Utilidades.ApplicationCore.Model;
+using Utilidades.ApplicationCore.Entity;
 using Utilidades.Infrastructure.Repository.Generic;
 
 namespace Utilidades.Infrastructure.Business.Implementattions {
     public class UserBusinessImpl : IUserBusiness {
-        private IRepository<User> _repository;
+        private IRepository<Users> _repository;
         private readonly UserConverter _converter;
-        public UserBusinessImpl (IRepository<User> repository) {
+        public UserBusinessImpl (IRepository<Users> repository) {
             _repository = repository;
             _converter = new UserConverter ();
         }

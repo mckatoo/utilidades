@@ -2,7 +2,7 @@
 using System.Linq;
 using Utilidades.ApplicationCore.Data.Converter;
 using Utilidades.ApplicationCore.Data.VO;
-using Utilidades.ApplicationCore.Model;
+using Utilidades.ApplicationCore.Entity;
 
 namespace Utilidades.ApplicationCore.Data.Converters {
     public class UsersTypeConverter : IParser<UsersTypeVO, UsersType>, IParser<UsersType, UsersTypeVO> {

@@ -19,7 +19,7 @@ using Utilidades.ApplicationCore.Security.Configuration;
 using Utilidades.API.HyperMedia;
 using Utilidades.Infrastructure.Business;
 using Utilidades.Infrastructure.Business.Implementattions;
-using Utilidades.Infrastructure.Data;
+using Utilidades.Infrastructure.Data.Context;
 using Utilidades.Infrastructure.Repository;
 using Utilidades.Infrastructure.Repository.Generic;
 
@@ -42,7 +42,7 @@ namespace Utilidades.API {
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices (IServiceCollection services) {
-            services.AddDbContext<MySQLContext> (options =>
+            services.AddDbContext<utilidadesContext> (options =>
                 options.UseMySQL (_connectionString)
             );
             ConfigureAutorization (services);

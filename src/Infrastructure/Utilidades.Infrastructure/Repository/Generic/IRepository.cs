@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Utilidades.ApplicationCore.Model.Base;
+using Utilidades.ApplicationCore.Entity.Base;
 
 namespace Utilidades.Infrastructure.Repository.Generic {
     public interface IRepository<T> where T : BaseEntity {

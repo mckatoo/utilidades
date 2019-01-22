@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Tapioca.HATEOAS.Utils;
 using Utilidades.ApplicationCore.Data.Converters;
 using Utilidades.ApplicationCore.Data.VO;
+using Utilidades.Infrastructure.Repository;
 using Utilidades.Infrastructure.Repository.Generic;
 
 namespace Utilidades.Infrastructure.Business.Implementattions {

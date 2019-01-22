@@ -1,4 +1,6 @@
 /media/ARQUIVOS/COMMON/PROJETOS/Utilidades/src/Infrastructure/Utilidades.Infrastructure/bin/Debug/netcoreapp2.2/Utilidades.Infrastructure.deps.json
+/media/ARQUIVOS/COMMON/PROJETOS/Utilidades/src/Infrastructure/Utilidades.Infrastructure/bin/Debug/netcoreapp2.2/Utilidades.Infrastructure.runtimeconfig.json
+/media/ARQUIVOS/COMMON/PROJETOS/Utilidades/src/Infrastructure/Utilidades.Infrastructure/bin/Debug/netcoreapp2.2/Utilidades.Infrastructure.runtimeconfig.dev.json
 /media/ARQUIVOS/COMMON/PROJETOS/Utilidades/src/Infrastructure/Utilidades.Infrastructure/bin/Debug/netcoreapp2.2/Utilidades.Infrastructure.dll
 /media/ARQUIVOS/COMMON/PROJETOS/Utilidades/src/Infrastructure/Utilidades.Infrastructure/bin/Debug/netcoreapp2.2/Utilidades.Infrastructure.pdb
 /media/ARQUIVOS/COMMON/PROJETOS/Utilidades/src/Infrastructure/Utilidades.Infrastructure/bin/Debug/netcoreapp2.2/Utilidades.ApplicationCore.dll
@@ -10,5 +12,3 @@
 /media/ARQUIVOS/COMMON/PROJETOS/Utilidades/src/Infrastructure/Utilidades.Infrastructure/obj/Debug/netcoreapp2.2/Utilidades.Infrastructure.csproj.CopyComplete
 /media/ARQUIVOS/COMMON/PROJETOS/Utilidades/src/Infrastructure/Utilidades.Infrastructure/obj/Debug/netcoreapp2.2/Utilidades.Infrastructure.dll
 /media/ARQUIVOS/COMMON/PROJETOS/Utilidades/src/Infrastructure/Utilidades.Infrastructure/obj/Debug/netcoreapp2.2/Utilidades.Infrastructure.pdb
-/media/ARQUIVOS/COMMON/PROJETOS/Utilidades/src/Infrastructure/Utilidades.Infrastructure/bin/Debug/netcoreapp2.2/Utilidades.Infrastructure.runtimeconfig.json
-/media/ARQUIVOS/COMMON/PROJETOS/Utilidades/src/Infrastructure/Utilidades.Infrastructure/bin/Debug/netcoreapp2.2/Utilidades.Infrastructure.runtimeconfig.dev.json
