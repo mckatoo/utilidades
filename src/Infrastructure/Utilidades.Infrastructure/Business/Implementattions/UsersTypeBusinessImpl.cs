@@ -48,6 +48,7 @@ namespace Utilidades.Infrastructure.Business.Implementattions {
         }
 
         public PagedSearchDTO<UsersTypeVO> FindWithPagedSearch (string type, string sortDirection, int pageSize, int activePage) {
+            activePage = activePage > 0 ? activePage - 1 : 0;
             string query = $"SELECT * FROM utilidades.users_type where 1 = 1 ";
             string countQuery = "SELECT count(*) FROM utilidades.users_type where 1 = 1 ";
 
@@ -61,7 +62,7 @@ namespace Utilidades.Infrastructure.Business.Implementattions {
             int totalResults = _converter.ParseList (_repository.FindWithPagedSearch (countQuery)).Count;
 
             return new PagedSearchDTO<UsersTypeVO> {
-                CurrentPage = activePage,
+                CurrentPage = activePage + 1,
                 List = types,
                 PageSize = pageSize,
                 SortDirections = sortDirection,
