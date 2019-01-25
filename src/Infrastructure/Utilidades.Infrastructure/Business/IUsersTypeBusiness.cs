@@ -10,6 +10,6 @@ namespace Utilidades.Infrastructure.Business {
         UsersTypeVO Create (UsersTypeVO type);
         UsersTypeVO Update (UsersTypeVO type);
         void Delete (long id);
-        PagedSearchDTO<UsersTypeVO> FindWithPagedSearch (string name, string sortDirection, int pageSize, int page);
+        PagedSearchDTO<UsersTypeVO> FindWithPagedSearch (string name, string sortDirection, int pageSize, int activePage);
     }
 }

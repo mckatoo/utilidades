@@ -49,15 +49,18 @@ namespace Utilidades.Infrastructure.Business.Implementattions {
 
         public PagedSearchDTO<UsersTypeVO> FindWithPagedSearch (string type, string sortDirection, int pageSize, int activePage) {
             activePage = activePage > 0 ? activePage - 1 : 0;
-            string query = $"SELECT * FROM utilidades.users_type where 1 = 1 ";
-            string countQuery = "SELECT count(*) FROM utilidades.users_type where 1 = 1 ";
+            string table = "utilidades.users_type";
+            string field = "type";
+            string query = $"SELECT * FROM {table} where 1 = 1 ";
+            string countQuery = $"SELECT count(*) FROM {table} where 1 = 1 ";
 
             if (!String.IsNullOrWhiteSpace (type) || !String.IsNullOrEmpty (type)) {
-                query = query + $"and type like \"%{type}%\" ";
+                query = query + $"and {field} like \"%{type}%\" ";
                 countQuery = query;
             }
 
-            query = query + $"order by type {sortDirection} limit {pageSize} offset {activePage};";
+            query = query + $"order by {field} {sortDirection} limit {pageSize} offset {activePage};";
+
             var types = _converter.ParseList (_repository.FindWithPagedSearch (query));
             int totalResults = _converter.ParseList (_repository.FindWithPagedSearch (countQuery)).Count;
 

@@ -81,5 +81,27 @@ namespace Utilidades.API.Controllers {
             _userBusiness.Delete (id);
             return NoContent ();
         }
+
+        [HttpGet ("find")]
+        [ProducesResponseType (typeof (List<UsersTypeVO>), 200)]
+        [ProducesResponseType (204)]
+        [ProducesResponseType (400)]
+        [ProducesResponseType (401)]
+        [Authorize ("Bearer")]
+        [TypeFilter (typeof (HyperMediaFilter))]
+        public IActionResult FindByName ([FromQuery] string name) {
+            return new OkObjectResult (_userBusiness.FindByName (name));
+        }
+
+        [HttpGet ("find/{sortDirection}/{pageSize}/{activePage}")]
+        [ProducesResponseType (typeof (List<UserVO>), 200)]
+        [ProducesResponseType (204)]
+        [ProducesResponseType (400)]
+        [ProducesResponseType (401)]
+        [Authorize ("Bearer")]
+        [TypeFilter (typeof (HyperMediaFilter))]
+        public IActionResult FindPagedSearch ([FromQuery] string name, string sortDirection, int pageSize, int activePage) {
+            return new OkObjectResult (_userBusiness.FindWithPagedSearch (name, sortDirection, pageSize, activePage));
+        }
     }
 }
